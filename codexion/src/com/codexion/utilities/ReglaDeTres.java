@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 /**
  * ReglaDeTres provides a simple GUI to perform cross-multiplications by means 
  * of the Rule Of Three
- * @author e288288
+ * @author Lucas Vieites <lucas@codexion.com>
  * @see http://en.wikipedia.org/wiki/Rule_of_three_%28mathematics%29#Rule_of_Three
  *
  */
@@ -151,7 +151,7 @@ public class ReglaDeTres extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * The main method of this class shows the GUI
+	 * The main method of tjis class shows the GUI
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -172,7 +172,7 @@ public class ReglaDeTres extends JFrame implements ActionListener {
 		setPreferredSize(new Dimension(300, 150));
 		setMaximumSize(new Dimension(800, 800));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ReglaDeTres.class.getResource("/com/codexion/com.codexion.utilities/resources/regladetres_16x16.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ReglaDeTres.class.getResource("/com/codexion/utilities/resources/regladetres_16x16.png")));
 		initialize();
 		this.getRootPane().setDefaultButton(btnCalcular);
 	}
