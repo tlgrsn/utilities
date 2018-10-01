@@ -18,23 +18,23 @@ public class StringReader extends JFrame {
 
 	private JPanel jContentPane = null;
 
-	private JTextField txtUno = null;
+	private JTextField txtOne = null;
 
 	private JLabel lblText = null;
 
-	private JButton btnCalcular = null;
+	private JButton btnEnter = null;
 
 	/**
 	 * This method initializes txtUno	
 	 * 	
 	 * @return javax.swing.JTextField	
 	 */
-	private JTextField getTxtUno() {
-		if (txtUno == null) {
-			txtUno = new JTextField();
-			txtUno.setBounds(new Rectangle(30, 41, 285, 22));
+	private JTextField getTxtOne() {
+		if (txtOne == null) {
+			txtOne = new JTextField();
+			txtOne.setBounds(new Rectangle(30, 41, 285, 22));
 		}
-		return txtUno;
+		return txtOne;
 	}
 
 	/**
@@ -42,22 +42,22 @@ public class StringReader extends JFrame {
 	 * 	
 	 * @return javax.swing.JButton	
 	 */
-	private JButton getBtnCalcular() {
-		if (btnCalcular == null) {
-			btnCalcular = new JButton();
-			btnCalcular.setBounds(new Rectangle(197, 73, 118, 26));
-			btnCalcular.setText("Enter");
-			btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+	private JButton getBtnEnter() {
+		if (btnEnter == null) {
+			btnEnter = new JButton();
+			btnEnter.setBounds(new Rectangle(197, 73, 118, 26));
+			btnEnter.setText("Enter");
+			btnEnter.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					Date ahora = new Date();
-					String primero = txtUno.getText();
-					System.out.println(ahora + " => " + primero);
-					txtUno.setText("");
-					txtUno.requestFocusInWindow();
+					Date datenow = new Date();
+					String thetext = txtOne.getText();
+					System.out.println(datenow + " => " + thetext);
+					txtOne.setText("");
+					txtOne.requestFocusInWindow();
 				}
 			});
 		}
-		return btnCalcular;
+		return btnEnter;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class StringReader extends JFrame {
 	public StringReader() {
 		super();
 		initialize();
-		this.getRootPane().setDefaultButton(btnCalcular);
+		this.getRootPane().setDefaultButton(btnEnter);
 	}
 
 	/**
@@ -91,12 +91,11 @@ public class StringReader extends JFrame {
 	private void initialize() {
 		this.setSize(335, 140);
 		this.setContentPane(getJContentPane());
-		this.setTitle("Lector de texto");
-		// Pone la ventana en el centro de la pantalla
+		this.setTitle("String Reader");
+		// Centers the window on the screen
 		Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 		this.setBounds((screenSize.width-335)/2, (screenSize.height-140)/2, 335, 140);
-		// Desactiva la capacidad de cambiar el tamaño de la ventana
-		// y elimina el botón de maximizar
+		// Disables resizing of the window and removes the Maximize button
 		this.setResizable(false);
 	}
 
@@ -109,12 +108,12 @@ public class StringReader extends JFrame {
 		if (jContentPane == null) {
 			lblText = new JLabel();
 			lblText.setBounds(new Rectangle(32, 12, 283, 19));
-			lblText.setText("Introduzca texto y pulse Enter:");
+			lblText.setText("Write something and press Enter:");
 			jContentPane = new JPanel();
 			jContentPane.setLayout(null);
-			jContentPane.add(getTxtUno(), null);
+			jContentPane.add(getTxtOne(), null);
 			jContentPane.add(lblText, null);
-			jContentPane.add(getBtnCalcular(), null);
+			jContentPane.add(getBtnEnter(), null);
 		}
 		return jContentPane;
 	}
