@@ -1,0 +1,3 @@
+2018-03-09 13:38:15 INFO  StopwatchDirect:67 - Counter started
+2018-03-09 13:38:18 INFO  StopwatchDirect:56 - Counter stopped: 0:00:02.578 => 2578 msec
+2018-03-09 13:38:19 INFO  StopwatchDirect:123 - Stopwatch exited.
