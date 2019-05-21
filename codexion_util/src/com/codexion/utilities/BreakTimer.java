@@ -105,7 +105,7 @@ public class BreakTimer extends JFrame implements ActionListener, Runnable {
 		
 		this.setSize(300, 150);
 		//this.setContentPane(getJContentPane());
-		this.setTitle("StopWatch");
+		this.setTitle("Break Timer");
 		// Center the window
 		Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 		this.setBounds((screenSize.width-300)/2, (screenSize.height-150)/2, 300, 150);
