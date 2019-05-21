@@ -16,9 +16,9 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 
-public class StopwatchDirect extends JFrame implements ActionListener, Runnable {
+public class BreakTimer extends JFrame implements ActionListener, Runnable {
 	/**
-	 * StopwatchDirect.java - simple stopwatch that starts the timer as soon as it starts running
+	 * BreakTimer.java - simple stopwatch that starts the timer as soon as it starts running
 	 * <p>
 	 * Version 1.1 adds logging with log4j
 	 * <p>
@@ -32,12 +32,12 @@ public class StopwatchDirect extends JFrame implements ActionListener, Runnable 
 	private final JLabel lblTime= new JLabel("0:00:00.000");
 	private Thread updater;
 	private boolean isRunning= false;
-	final static Logger logger = Logger.getLogger(StopwatchDirect.class);
+	final static Logger logger = Logger.getLogger(BreakTimer.class);
 
 
 	private final Runnable displayUpdater= new Runnable() {
 		public void run() {
-		   displayElapsedTime(System.currentTimeMillis() - StopwatchDirect.this.startTime);
+		   displayElapsedTime(System.currentTimeMillis() - BreakTimer.this.startTime);
 	    }
 	};
 
@@ -57,7 +57,7 @@ public class StopwatchDirect extends JFrame implements ActionListener, Runnable 
 					" => " + Long.toString(elapsed) + " msec");
 			}
 			btnStart.setText("Start");
-			// Display the end-result
+			// Display the end result
 		} else {
 			startTime= System.currentTimeMillis();
 			isRunning= true;
@@ -89,7 +89,7 @@ public class StopwatchDirect extends JFrame implements ActionListener, Runnable 
 		// Ignore and return!
 	}
 
-	public StopwatchDirect() {
+	public BreakTimer() {
 		super();
 		timerFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
 		getContentPane().setLayout(new GridLayout(0, 1, 0, 0));
@@ -118,7 +118,7 @@ public class StopwatchDirect extends JFrame implements ActionListener, Runnable 
 	}
 
 	public static void main(String[] arg) {
-		new StopwatchDirect().addWindowListener(new WindowAdapter() {
+		new BreakTimer().addWindowListener(new WindowAdapter() {
 		   public void windowClosing(WindowEvent e) {
 			   logger.info("Stopwatch exited.");
 			   System.exit(0);
