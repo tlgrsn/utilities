@@ -1805,10 +1805,10 @@ function selectDate(cal) {
 	var p = cal.params;
 	var update = (cal.dateClicked || p.electric);
 	year = p.inputField.id;
-	
+
 	day = p.baseField + '_2';
 	month = p.baseField + '_1';
-	
+
 	document.getElementById(month).value = cal.date.print('%m');
 	document.getElementById(day).value = cal.date.print('%e');
 	document.getElementById(year).value = cal.date.print('%Y');
@@ -1818,10 +1818,10 @@ function selectEuropeDate(cal) {
 	var p = cal.params;
 	var update = (cal.dateClicked || p.electric);
 	year = p.inputField.id;
-	
+
 	day = p.baseField + '_1';
 	month = p.baseField + '_2';
-	
+
 	document.getElementById(month).value = cal.date.print('%m');
 	document.getElementById(day).value = cal.date.print('%e');
 	document.getElementById(year).value = cal.date.print('%Y');
@@ -1836,27 +1836,31 @@ function selectEuropeDate(cal) {
 
 // full day names
 Calendar._DN = new Array
-("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+//("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+("Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag");
 
 // short day names
 Calendar._SDN = new Array
-("S", "M", "T", "W", "T", "F", "S", "S");
+//("S", "M", "T", "W", "T", "F", "S", "S");
+("Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo");
 
 // First day of the week. "0" means display Sunday first, "1" means display
 // Monday first, etc.
-Calendar._FD = 0;
+Calendar._FD = 1;
 
 // full month names
 Calendar._MN = new Array
-("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+//("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+("Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December");
 
 // short month names
 Calendar._SMN = new Array
-("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+//("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+("Jan", "Feb", "Maa", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec");
 
 // tooltips
 Calendar._TT = {};
-Calendar._TT["INFO"] = "About the Calendar";
+Calendar._TT["INFO"] = "Over dit kalender";
 
 Calendar._TT["ABOUT"] =
 "DHTML Date/Time Selector\n" +
@@ -1874,31 +1878,31 @@ Calendar._TT["ABOUT_TIME"] = "\n\n" +
 "- or Shift-click to decrease it\n" +
 "- or click and drag for faster selection.";
 
-Calendar._TT["PREV_YEAR"] = "Prev. Year (Hold for Menu)";
-Calendar._TT["PREV_MONTH"] = "Prev. Month (Hold for Menu)";
-Calendar._TT["GO_TODAY"] = "Go to Today";
-Calendar._TT["NEXT_MONTH"] = "Next Month (Hold for Menu)";
-Calendar._TT["NEXT_YEAR"] = "Next Year (Hold for Menu)";
-Calendar._TT["SEL_DATE"] = "Select Date";
-Calendar._TT["DRAG_TO_MOVE"] = "Drag to Move";
-Calendar._TT["PART_TODAY"] = " (Today)";
+Calendar._TT["PREV_YEAR"] = "Vorig jaar (Houd voor menu)";
+Calendar._TT["PREV_MONTH"] = "Vorige maand (Houd voor menu)";
+Calendar._TT["GO_TODAY"] = "Naar vandaag";
+Calendar._TT["NEXT_MONTH"] = "Volg. maand (Houd voor menu)";
+Calendar._TT["NEXT_YEAR"] = "Volg. jaar (Houd voor menu)";
+Calendar._TT["SEL_DATE"] = "Kies datum";
+Calendar._TT["DRAG_TO_MOVE"] = "Slepen om te bewegen";
+Calendar._TT["PART_TODAY"] = " (Vandaag)";
 
 // the following is to inform that "%s" is to be the first day of week
 // %s will be replaced with the day name.
-Calendar._TT["DAY_FIRST"] = "Display %ss first";
+Calendar._TT["DAY_FIRST"] = "Toon %s eerst";
 
 // This may be locale-dependent.  It specifies the week-end days, as an array
 // of comma-separated numbers.  The numbers are from 0 to 6: 0 means Sunday, 1
 // means Monday, etc.
 Calendar._TT["WEEKEND"] = "0,6";
 
-Calendar._TT["CLOSE"] = "Close Calendar";
-Calendar._TT["TODAY"] = "Today";
-Calendar._TT["TIME_PART"] = "(Shift-)Click or Drag to Change Value";
+Calendar._TT["CLOSE"] = "Kalender sluiten";
+Calendar._TT["TODAY"] = "Vandaag";
+Calendar._TT["TIME_PART"] = "(Shift-)Click of sleep om waarde te wijzigen";
 
 // date formats
 Calendar._TT["DEF_DATE_FORMAT"] = "%Y-%m-%d";
-Calendar._TT["TT_DATE_FORMAT"] = "%b %e, %Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%e %b %Y";
 
 Calendar._TT["WK"] = "wk";
 Calendar._TT["TIME"] = "Time:";
