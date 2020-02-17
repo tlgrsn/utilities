@@ -14,3 +14,4 @@ Op een server met PHP:
 ## Componenten
 - [fpdf](http://www.fpdf.org/)
 - [pForm](http://www.phpform.org/)
+- [Krumo](http://krumo.kaloyan.info/)
