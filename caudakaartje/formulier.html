@@ -13,7 +13,7 @@
 	<div id="form_container">
 
 		<h1>Mijn Dwarslaesie Kaart</h1>
-		<form id="form_91159" class="appnitro"  method="post" action="">
+		<form id="form_caudakaart" class="appnitro"  method="post" action="debug_post.php">
 					<div class="form_description">
 			<h2>Mijn Dwarslaesie Kaart</h2>
 			<p>Concept voor het automatisch genereren van een Cauda-kaartje.</p>
@@ -23,35 +23,35 @@
 					<li id="li_1" >
 		<label class="description" for="element_1">Naam </label>
 		<span>
-			<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value=""/>
+			<input id="element_1_1" name= "voornaam" class="element text" maxlength="255" size="8" value=""/>
 			<label>Voornaam</label>
 		</span>
 		<span>
-			<input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="14" value=""/>
+			<input id="element_1_2" name= "achternaam" class="element text" maxlength="255" size="14" value=""/>
 			<label>Achternaam</label>
 		</span>
 		</li>		<li id="li_2" >
 		<label class="description" for="element_2">BSN </label>
 		<div>
-			<input id="element_2" name="element_2" class="element text small" type="text" maxlength="255" value=""/>
+			<input id="element_2" name="bsn" class="element text small" type="text" maxlength="255" value=""/>
 		</div>
 		</li>		<li id="li_5" >
-		<label class="description" for="element_5"><hr/>
+		<label class="description" for="soort_laesie"><hr/>
 
 </hr/></label>
 		<span>
-			<input id="element_5_1" name="element_5" class="element radio" type="radio" value="1" />
+			<input id="element_5_1" name="soort_laesie" class="element radio" type="radio" value="dwarslaesie" />
 <label class="choice" for="element_5_1">Dwarslaesie</label>
-<input id="element_5_2" name="element_5" class="element radio" type="radio" value="2" />
+<input id="element_5_2" name="soort_laesie" class="element radio" type="radio" value="caudalaesie" />
 <label class="choice" for="element_5_2">Caudalaesie</label>
 
 		</span>
 		</li>		<li id="li_6" >
-		<label class="description" for="element_6">Type laesie </label>
+		<label class="description" for="type_laesie">Type laesie </label>
 		<span>
-			<input id="element_6_1" name="element_6" class="element radio" type="radio" value="1" />
+			<input id="element_6_1" name="type_laesie" class="element radio" type="radio" value="compleet" />
 <label class="choice" for="element_6_1">Compleet</label>
-<input id="element_6_2" name="element_6" class="element radio" type="radio" value="2" />
+<input id="element_6_2" name="type_laesie" class="element radio" type="radio" value="incompleet" />
 <label class="choice" for="element_6_2">Incompleet</label>
 
 		</span>
@@ -85,89 +85,89 @@
 		</script>
 
 		</li>		<li id="li_4" >
-		<label class="description" for="element_4">Oorzaak </label>
+		<label class="description" for="oorzaak">Oorzaak </label>
 		<div>
-			<input id="element_4" name="element_4" class="element text large" type="text" maxlength="255" value=""/>
+			<input id="element_4" name="oorzaak" class="element text large" type="text" maxlength="255" value=""/>
 		</div>
 		</li>		<li id="li_7" >
 		<label class="description" for="element_7">Implantaat </label>
 		<span>
-			<input id="element_7_1" name="element_7_1" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_7_1">Metaal (zie implantaatkaartje)</label>
-<input id="element_7_2" name="element_7_2" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_7_2">GEEN MRI</label>
+			<input id="element_7_1" name="implantaat_metaal" class="element checkbox" type="checkbox" value="Implantaat Metaal" />
+<label class="choice" for="implantaat_metaal">Metaal (zie implantaatkaartje)</label>
+<input id="element_7_2" name="implantaat_geen_MRI" class="element checkbox" type="checkbox" value="Implantaat GEEN MRI" />
+<label class="choice" for="implantaat_geen_MRI">GEEN MRI</label>
 
 		</span>
 		</li>		<li id="li_8" >
-		<label class="description" for="element_8">Andere </label>
+		<label class="description" for="andere">Andere </label>
 		<span>
-			<input id="element_8_1" name="element_8_1" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_1">Spasmen</label>
-<input id="element_8_2" name="element_8_2" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_2">Autonome dysregulatie</label>
-<input id="element_8_3" name="element_8_3" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_3">Koude/hitte-intolerantie</label>
-<input id="element_8_4" name="element_8_4" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_4">Gevoelsstoornissen</label>
-<input id="element_8_5" name="element_8_5" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_5">Krachtverlies</label>
-<input id="element_8_6" name="element_8_6" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_6">Pijn</label>
-<input id="element_8_7" name="element_8_7" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_7">Medicatie (zie medicijnlijst)</label>
-<input id="element_8_8" name="element_8_8" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_8_8">Bij OPNAME of OPERATIE altijd ANTIDECUBITUSMATRAS</label>
+			<input id="andere_1" name="andere_1" class="element checkbox" type="checkbox" value="Spasmen" />
+<label class="choice" for="andere_1">Spasmen</label>
+<input id="andere_2" name="andere_2" class="element checkbox" type="checkbox" value="Autonome dysregulatie" />
+<label class="choice" for="andere_2">Autonome dysregulatie</label>
+<input id="andere_3" name="andere_3" class="element checkbox" type="checkbox" value="Koude/hitte-intolerantie" />
+<label class="choice" for="andere_3">Koude/hitte-intolerantie</label>
+<input id="andere_4" name="andere_4" class="element checkbox" type="checkbox" value="Gevoelsstoornissen" />
+<label class="choice" for="andere_4">Gevoelsstoornissen</label>
+<input id="andere_5" name="andere_5" class="element checkbox" type="checkbox" value="Krachtverlies" />
+<label class="choice" for="andere_5">Krachtverlies</label>
+<input id="andere_6" name="andere_6" class="element checkbox" type="checkbox" value="Pijn" />
+<label class="choice" for="andere_6">Pijn</label>
+<input id="andere_7" name="andere_7" class="element checkbox" type="checkbox" value="Medicatie (zie medicijnlijst)" />
+<label class="choice" for="andere_7">Medicatie (zie medicijnlijst)</label>
+<input id="andere_8" name="andere_8" class="element checkbox" type="checkbox" value="Bij OPNAME of OPERATIE altijd ANTIDECUBITUSMATRAS" />
+<label class="choice" for="andere_8">Bij OPNAME of OPERATIE altijd ANTIDECUBITUSMATRAS</label>
 
 		</span>
 		</li>		<li id="li_9" >
-		<label class="description" for="element_9">ADL (Algemene Dagelijkse Levensverrichtingen) </label>
+		<label class="description" for="ADL">ADL (Algemene Dagelijkse Levensverrichtingen) </label>
 		<span>
-			<input id="element_9_1" name="element_9_1" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_9_1">Geheel zelfstandig</label>
-<input id="element_9_2" name="element_9_2" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_9_2">Hulp bij transfer</label>
-<input id="element_9_3" name="element_9_3" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_9_3">Hulp bij wassen/aankleden/tanden poetsen</label>
+			<input id="ADL-zelfstandig" name="ADL" class="element checkbox" type="radio" value="Geheel zelfstandig" />
+<label class="choice" for="ADL-zelfstandig">Geheel zelfstandig</label>
+<input id="ADL-hulp-transfer" name="ADL" class="element checkbox" type="radio" value="Hulp bij transfer" />
+<label class="choice" for="ADL-hulp-transfer">Hulp bij transfer</label>
+<input id="ADL-wassen-enz" name="ADL" class="element checkbox" type="radio" value="Hulp bij wassen/aankleden/tanden poetsen" />
+<label class="choice" for="ADL-wassen-enz">Hulp bij wassen/aankleden/tanden poetsen</label>
 
 		</span>
 		</li>		<li id="li_10" >
-		<label class="description" for="element_10">Blaas </label>
+		<label class="description" for="blaas">Blaas</label>
 		<span>
-			<input id="element_10_1" name="element_10_1" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_10_1">Zelfkatheterisatie</label>
-<input id="element_10_2" name="element_10_2" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_10_2">Verblijfskatheter</label>
-<input id="element_10_3" name="element_10_3" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_10_3">Opvangmateriaal</label>
-<input id="element_10_4" name="element_10_4" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_10_4">Blaasstimulator</label>
-<input id="element_10_5" name="element_10_5" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_10_5">Stoma</label>
+			<input id="blaas_1" name="blaas_1" class="element checkbox" type="checkbox" value="Zelfkatheterisatie" />
+<label class="choice" for="blaas_1">Zelfkatheterisatie</label>
+<input id="blaas_2" name="blaas_2" class="element checkbox" type="checkbox" value="Verblijfskatheter" />
+<label class="choice" for="blaas_2">Verblijfskatheter</label>
+<input id="blaas_3" name="blaas_3" class="element checkbox" type="checkbox" value="Opvangmateriaal" />
+<label class="choice" for="blaas_3">Opvangmateriaal</label>
+<input id="blaas_4" name="blaas_4" class="element checkbox" type="checkbox" value="Blaasstimulator" />
+<label class="choice" for="blaas_4">Blaasstimulator</label>
+<input id="blaas_5" name="blaas_5" class="element checkbox" type="checkbox" value="Stoma" />
+<label class="choice" for="blaas_5">Stoma</label>
 
 		</span>
 		</li>		<li id="li_11" >
-		<label class="description" for="element_11">Darmen </label>
+		<label class="description" for="darmen">Darmen</label>
 		<span>
-			<input id="element_11_1" name="element_11_1" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_11_1">Laxeren</label>
-<input id="element_11_2" name="element_11_2" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_11_2">Spoelen</label>
-<input id="element_11_3" name="element_11_3" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_11_3">Opvangmateriaal</label>
-<input id="element_11_4" name="element_11_4" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_11_4">Darmstimulator</label>
-<input id="element_11_5" name="element_11_5" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_11_5">Stoma</label>
+			<input id="darmen_1" name="darmen_1" class="element checkbox" type="checkbox" value="Laxeren" />
+<label class="choice" for="darmen_1">Laxeren</label>
+<input id="darmen_2" name="darmen_2" class="element checkbox" type="checkbox" value="Spoelen" />
+<label class="choice" for="darmen_2">Spoelen</label>
+<input id="darmen_3" name="darmen_3" class="element checkbox" type="checkbox" value="Opvangmateriaal" />
+<label class="choice" for="darmen_3">Opvangmateriaal</label>
+<input id="darmen_4" name="darmen_4" class="element checkbox" type="checkbox" value="Darmstimulator" />
+<label class="choice" for="darmen_4">Darmstimulator</label>
+<input id="darmen_5" name="darmen_5" class="element checkbox" type="checkbox" value="Stoma" />
+<label class="choice" for="darmen_5">Stoma</label>
 
 		</span>
 		</li>		<li id="li_12" >
-		<label class="description" for="element_12">Handfunctie </label>
+		<label class="description" for="handfunctie">Handfunctie </label>
 		<span>
-<input id="element_12_1" name="element_12" class="element checkbox" type="checkbox" value="1" />
-<label class="choice" for="element_12_1">Normaal</label>
-<input id="element_12_2" name="element_12" class="element subcheckbox" type="checkbox" value="2" />
+<input id="hand-normaal" name="hand-normaal" class="element checkbox" type="checkbox" value="Hand Normaal" />
+<label class="choice" for="hand-normaal">Normaal</label>
+<input id="element_12_2" name="element_12" class="element subcheckbox" type="checkbox" value="Hand Normaal Links" />
 <label class="subchoice" for="element_12_2">Links</label>
-<input id="element_12_3" name="element_12" class="element subcheckbox" type="checkbox" value="3" />
+<input id="element_12_3" name="element_12" class="element subcheckbox" type="checkbox" value="Hand Normaal Rechts" />
 <label class="subchoice" for="element_12_3">Rechts</label>
 
 <input id="element_12_1" name="element_12" class="element checkbox" type="checkbox" value="1" />
@@ -185,7 +185,8 @@
 <label class="subchoice" for="element_12_3">Rechts</label>
 
 		</span>
-		</li>		<li id="li_13" >
+		</li>
+<li id="li_13" >
 		<label class="description" for="element_13">Voetfunctie </label>
 		<span>
 <input id="element_13_1" name="element_13_1" class="element checkbox" type="checkbox" value="1" />
