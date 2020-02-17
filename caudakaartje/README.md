@@ -5,3 +5,12 @@ Het doel van dit project is het beschikbaar stellen van een webformulier waarmee
 
 ### Hoe maak ik mijn eigen kaartje?
 [Werk in uitvoering]
+
+### Uitproberen
+Op een server met PHP:
+- ```svn export https://github.com/lucasvieites/utilities/trunk/caudakaartje```
+- Open ```formulier.html```
+
+### Componenten
+- [fpdf](http://www.fpdf.org/)
+- [pForm](http://www.phpform.org/)
