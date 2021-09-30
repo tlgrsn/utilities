@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2021-09-30 08:10:58">
+<sp_widget action="INSERT_OR_UPDATE">
+<category>custom</category>
+<client_script><![CDATA[function(){
+	return true;
+}]]></client_script>
+<controller_as>generateTOC</controller_as>
+<css>div#toc ul {
+  list-style-type: none;
+  padding-inline-start: 25px;
+}
+div#toc {
+  font-size: small;
+}</css>
+<data_table>sp_instance</data_table>
+<demo_data/>
+<description/>
+<docs display_value=""/>
+<field_list>title,glyph,css</field_list>
+<has_preview>true</has_preview>
+<id>table_of_content</id>
+<internal>false</internal>
+<link/>
+<name>Table of content</name>
+<option_schema>[{"hint":"Show even when empty","name":"always_show","section":"other","label":"Show even when empty","type":"boolean"}]</option_schema>
+<public>true</public>
+<roles>knowledge,itil</roles>
+<script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+<servicenow>false</servicenow>
+<sys_class_name>sp_widget</sys_class_name>
+<sys_created_by>lucas.vieites</sys_created_by>
+<sys_created_on>2021-03-24 14:30:25</sys_created_on>
+<sys_id>5e413592db872410cce46b6d139619e1</sys_id>
+<sys_mod_count>42</sys_mod_count>
+<sys_name>Table of content</sys_name>
+<sys_package display_value="Knowledge Management - Service Portal" source="sn_km_portal">bab6dea3db20320099f93691f0b8f590</sys_package>
+<sys_policy/>
+<sys_scope display_value="Knowledge Management - Service Portal">bab6dea3db20320099f93691f0b8f590</sys_scope>
+<sys_update_name>sp_widget_5e413592db872410cce46b6d139619e1</sys_update_name>
+<sys_updated_by>lucas.vieites</sys_updated_by>
+<sys_updated_on>2021-06-15 16:22:37</sys_updated_on>
+<template><![CDATA[<script>
+// From http://www.whitsoftdev.com/articles/toc.html
+function generateTOC(textBody) {
+  toc = document.getElementById('toc'); // The toc element must exist
+  //console.log("LVF - TOC script - textBody: " + textBody.innerHTML);
+  var i2 = 0, i3 = 0, i4 = 0;
+  var section;
+  toc = toc.appendChild(document.createElement("ul"));
+  //console.log("LVF - TOC script: " + textBody.childNodes.length);
+  for (var i = 0; i < textBody.childNodes.length; ++i) {
+    var node = textBody.childNodes[i];
+    var tagName = node.nodeName.toLowerCase();
+    //console.log("LVF - TOC script: tagName = " + tagName);
+    //console.log("LVF - TOC script: tagName.innerHTML = " + node.innerHTML);
+    if (tagName == "h4") {
+      //console.log("LVF - TOC script: We have an H4");
+      ++i4;
+      if (i4 == 1) toc.lastChild.lastChild.lastChild.appendChild(document.createElement("ul"));
+      section = i2 + "." + i3 + "." + i4;
+      //node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
+      node.id = "section" + section;
+      toc.lastChild.lastChild.lastChild.lastChild.appendChild(document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+    }
+    else if (tagName == "h3") {
+      //console.log("LVF - TOC script: We have an H3");
+      ++i3;
+      i4 = 0;
+      if (i3 == 1) toc.lastChild.appendChild(document.createElement("ul"));
+      section = i2 + "." + i3;
+      //node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
+      node.id = "section" + section;
+      toc.lastChild.lastChild.appendChild(document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+    }
+    else if (tagName == "h2") {
+      //console.log("LVF - TOC script: We have an H2");
+      ++i2;
+      i3 = 0;
+      i4 = 0;
+      section = i2;
+      //node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
+      node.id = "section" + section;
+      toc.appendChild(h2item = document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+    }
+  }
+}
+
+function createLink(href, innerHTML) {
+  var a = document.createElement("a");
+  a.setAttribute("href", href);
+  a.innerHTML = innerHTML;
+  return a;
+}
+
+/* Trigger the function to create the TOC */
+//generateTOC(document.getElementById('mainContent'));
+  var allSections = document.getElementsByTagName("section");
+  generateTOC(allSections[1]); // The content is in the second section
+</script>
+<h3>Table of content</h3>
+<!--<a href="javascript:generateTOC(document.getElementById('mainContent'));">Generate TOC</a>-->
+<div id="toc"></div>
+]]></template>
+</sp_widget>
+</unload>
